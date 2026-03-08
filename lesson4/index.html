@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Homework #4.1-->
+<script>
+    const userName = prompt("Please enter your name");
+    alert (`Hello, ${userName}! How are you?`) ;
+</script>
+
+<!--Homework #4.2-->
+<script>
+const number = prompt("Enter a three-digit number");
+
+const a = number[0];
+const b = number[1];
+const c = number[2];
+
+if (a === b && b === c) {
+console.log("All digits are the same");
+} else {
+console.log("Not all digits are the same");
+}
+
+if (a === b || a === c || b === c) {
+console.log("There are equal digits");
+} else {
+console.log("All digits are different");
+}
+</script>
+
+<!--Homework #4.3-->
+<script>
+    const birthYear = prompt("Enter your birth year");
+    const city = prompt("Which city do you live in?");
+    const sport = prompt("What is your favorite sport?");
+
+    let message = "";
+
+    if (birthYear === null) {
+        message = "It's a pity that you didn't enter your birth year.";
+    } else if (city === null) {
+        message = "It's a pity that you didn't enter your city.";
+    } else if (sport === null) {
+        message = "It's a pity that you didn't enter your favorite sport.";
+    } else {
+
+        const currentYear = new Date().getFullYear();
+        const age = currentYear - Number(birthYear);
+
+        message += `Your age: ${age}\n`;
+
+        if (city === "Kyiv") {
+            message += "You live in the capital of Ukraine.\n";
+        } else if (city === "Washington") {
+            message += "You live in the capital of the USA.\n";
+        } else if (city === "London") {
+            message += "You live in the capital of Great Britain.\n";
+        } else {
+            message += `You live in the city of ${city}.\n`;
+        }
+
+        if (sport === "football") {
+            message += "Cool! Do you want to become Lionel Messi?";
+        } else if (sport === "boxing") {
+            message += "Cool! Do you want to become Oleksandr Usyk?";
+        } else if (sport === "tennis") {
+            message += "Cool! Do you want to become Novak Djokovic?";
+        } else {
+            message += `Your favorite sport is ${sport}.`;
+        }
+    }
+
+    alert(message);
+
+</script>
+
+<!--Homework #4.4-->
+
+<script>
+    let numOrStr = prompt('Input number or string');
+    console.log(numOrStr);
+
+    switch (true) {
+
+        case numOrStr === null:
+            console.log('Canceled');
+            break;
+
+        case numOrStr.trim() === '':
+            console.log('Empty String');
+            break;
+
+        case isNaN(+numOrStr):
+            console.log('Number is NaN');
+            break;
+
+        default:
+            console.log('OK!');
+    }
+
+</script>
+
+</body>
+</html>
