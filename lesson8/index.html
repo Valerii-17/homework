@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--Homework 8.1-->
+<script>
+    function createSum() {
+        let total = 0;
+
+        return function(num) {
+            total += num;
+            return total;
+        };
+    }
+
+    const sum = createSum();
+
+    console.log(sum(4));
+    console.log(sum(6));
+    console.log(sum(15));
+    console.log(sum(7));
+    // alert(sum(5));
+</script>
+
+
+<!--Homework 8.2-->
+<script>
+
+    function multiply(a) {
+        return function(b) {
+            return a * b;
+        };
+    }
+    console.log(multiply(5)(2));
+
+
+    const result = multiply(5)(2);
+    console.log(result);
+    // alert(result);
+
+</script>
+
+<!--Homework 8.3-->
+<script>
+
+    function askNumber() {
+        let lastValue;
+
+        for (let i = 0; i <= 10; i++) {
+            let input = prompt("Enter a number bigger than 100:");
+
+            lastValue = input;
+
+            if (input === null || isNaN(input)) {
+                break;
+            }
+
+            let number = Number(input);
+
+            if (number > 100) {
+                break;
+            }
+        }
+        console.log(lastValue);
+        alert("Last value is: " + lastValue);
+    }
+    askNumber();
+
+</script>
+
+</body>
+</html>
