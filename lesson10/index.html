@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Homework 10-->
+<script>
+    let company = {
+        designers: [
+            {name: `Alice`, salary: 1000},
+            {name: `Ben`, salary: 1200},
+            {name: `John`, salary: 1500}],
+        development: {
+            front: [
+                {name: `Anton`, salary: 2000},
+                {name: `Jack`, salary: 2000}],
+            back: [
+                {name: `Anna`, salary: 1800},
+                {name: `Bob`, salary: 2200}],
+        },
+        marketing: [],
+        hr: [],
+        // ......
+    }
+        function sumSalaries(dep) {
+        if (Array.isArray(dep)) {
+            return dep.reduce((sum, user) => sum + user.salary, 0);
+        }
+
+        let sum = 0;
+
+        for (let key in dep) {
+            sum += sumSalaries(dep[key]);
+        }
+
+        return sum;
+    }
+    console.log(sumSalaries(company));
+</script>
+
+</body>
+</html>
