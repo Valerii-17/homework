@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img  id="img" alt="" >
+
+<script>
+    let random = Math.floor(Math.random() * 9) + 1;
+
+    let path = `img/${random}.png`;
+
+    document.getElementById('img').src = path;
+</script>
+</body>
+</html>
